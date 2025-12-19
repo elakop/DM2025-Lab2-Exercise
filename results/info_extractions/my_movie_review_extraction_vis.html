@@ -1,0 +1,501 @@
+<style>
+.lx-highlight { position: relative; border-radius:3px; padding:1px 2px;}
+.lx-highlight .lx-tooltip {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  background: #333;
+  color: #fff;
+  text-align: left;
+  border-radius: 4px;
+  padding: 6px 8px;
+  position: absolute;
+  z-index: 1000;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  max-width: 240px;
+  white-space: normal;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+.lx-highlight:hover .lx-tooltip { visibility: visible; opacity:1; }
+.lx-animated-wrapper { max-width: 100%; font-family: Arial, sans-serif; }
+.lx-controls {
+  background: #fafafa; border: 1px solid #90caf9; border-radius: 8px;
+  padding: 12px; margin-bottom: 16px;
+}
+.lx-button-row {
+  display: flex; justify-content: center; gap: 8px; margin-bottom: 12px;
+}
+.lx-control-btn {
+  background: #4285f4; color: white; border: none; border-radius: 4px;
+  padding: 8px 16px; cursor: pointer; font-size: 13px; font-weight: 500;
+  transition: background-color 0.2s;
+}
+.lx-control-btn:hover { background: #3367d6; }
+.lx-progress-container {
+  margin-bottom: 8px;
+}
+.lx-progress-slider {
+  width: 100%; margin: 0; appearance: none; height: 6px;
+  background: #ddd; border-radius: 3px; outline: none;
+}
+.lx-progress-slider::-webkit-slider-thumb {
+  appearance: none; width: 18px; height: 18px; background: #4285f4;
+  border-radius: 50%; cursor: pointer;
+}
+.lx-progress-slider::-moz-range-thumb {
+  width: 18px; height: 18px; background: #4285f4; border-radius: 50%;
+  cursor: pointer; border: none;
+}
+.lx-status-text {
+  text-align: center; font-size: 12px; color: #666; margin-top: 4px;
+}
+.lx-text-window {
+  font-family: monospace; white-space: pre-wrap; border: 1px solid #90caf9;
+  padding: 12px; max-height: 260px; overflow-y: auto; margin-bottom: 12px;
+  line-height: 1.6;
+}
+.lx-attributes-panel {
+  background: #fafafa; border: 1px solid #90caf9; border-radius: 6px;
+  padding: 8px 10px; margin-top: 8px; font-size: 13px;
+}
+.lx-current-highlight {
+  border-bottom: 4px solid #ff4444;
+  font-weight: bold;
+  animation: lx-pulse 1s ease-in-out;
+}
+@keyframes lx-pulse {
+  0% { text-decoration-color: #ff4444; }
+  50% { text-decoration-color: #ff0000; }
+  100% { text-decoration-color: #ff4444; }
+}
+.lx-legend {
+  font-size: 12px; margin-bottom: 8px;
+  padding-bottom: 8px; border-bottom: 1px solid #e0e0e0;
+}
+.lx-label {
+  display: inline-block;
+  padding: 2px 4px;
+  border-radius: 3px;
+  margin-right: 4px;
+  color: #000;
+}
+.lx-attr-key {
+  font-weight: 600;
+  color: #1565c0;
+  letter-spacing: 0.3px;
+}
+.lx-attr-value {
+  font-weight: 400;
+  opacity: 0.85;
+  letter-spacing: 0.2px;
+}
+
+/* Add optimizations with larger fonts and better readability for GIFs */
+.lx-gif-optimized .lx-text-window { font-size: 16px; line-height: 1.8; }
+.lx-gif-optimized .lx-attributes-panel { font-size: 15px; }
+.lx-gif-optimized .lx-current-highlight { text-decoration-thickness: 4px; }
+</style>
+    <div class="lx-animated-wrapper lx-gif-optimized">
+      <div class="lx-attributes-panel">
+        <div class="lx-legend">Highlights Legend: <span class="lx-label" style="background-color:#D2E3FC;">audience_impact</span> <span class="lx-label" style="background-color:#C8E6C9;">opinion_statement</span></div>
+        <div id="attributesContainer"></div>
+      </div>
+      <div class="lx-text-window" id="textWindow">
+        **Page 1**
+&quot;&quot;&quot;
+Film
+TV
+What To Watch
+Music
+Docs
+Digital &amp; Gaming
+Global
+Awards Circuit
+Video
+What To Hear
+Home &gt; Film &gt; Reviews
+Oct 30, 2024 4:00pm PT
+‘Waves’ Review: Jiří Mádl’s Drama on
+the End of the Prague Spring Marks a
+Timely Portrait of the Power of
+Principled Journalists
+The <span class="lx-highlight lx-current-highlight" data-idx="0" style="background-color:#C8E6C9;">muscular spy thriller</span>, which is the Czech entry for international feature
+at this year&#x27;s Oscars, <span class="lx-highlight" data-idx="1" style="background-color:#C8E6C9;">shines a light on the brave work</span> of the International
+News Office at Czechoslovak Radio leading up to the Warsaw Pact invasion
+of Czechoslovakia.
+By Manuel Betancourt
+More from Variety
+Suraj Sharma and Director
+Jennifer E. Montgomery
+on True-Story Thriller
+‘This Tempting Madness’
+Ahead of IFFI Premiere
+Sponsored Stories
+Most Popular
+ADVERTISEMENT
+GEMINI IN PRO
+Try Veo
+3 in Pro
+Anyone can be a
+creator with Gemini.
+Visualize and share
+your ideas in minutes
+Sign Up
+Must Read
+Music
+COVER | Sabrina Carpenter’s Wild Year
+of ‘Man’s Best Friend,’ Taylor Swift
+and Growing Up
+Film
+Anonymous A-Listers Lobby
+Congress Against Netflix-
+WBD: Streamer Would ‘Hold a
+Noose Around Theatrical’
+TV
+&#x27;Stranger Things 5&#x27; Spoiler
+Interview: Duffer Brothers
+Explain Shocking Volume 1
+Ending
+Film
+New York Film Critics 2025:
+‘One Battle After Another’
+Wins Best Film, Rose Byrne
+and Wagner Moura Take Top
+Acting Prizes
+TV
+Olivia Nuzzi’s Disastrous
+Memoir Rollout Is a Doomed
+Attempt to Have It Both Ways
+Sign Up for Variety Newsletters
+Enter Your Email Address
+Sign Up
+By providing your information, you agree to our Terms of Use
+and our Privacy Policy. We use vendors that may also process
+your information to help provide our services. // This site is
+protected by reCAPTCHA Enterprise and the Google Privacy
+Policy and Terms of Service apply.
+ADVERTISEMENT
+Variety Confidential
+A Variety and iHeartRadio Podcast
+More From Our Brands
+Rolling Stone
+How to Watch Taylor
+Swift’s ‘The End of an Era’
+Docuseries and Concert
+Film Online for Free
+Robb Report
+The U.S. Luxury Car
+Market Is Set to Hit $215
+Billion by 2035, a New
+Report Says
+Sportico
+Can AI Help the SEC
+Maintain Its TV
+Dominance?
+WWD
+Emma Corrin Takes on
+Edgy Dressing in Lemaire
+Leather for ‘Oh, Mary!’
+West End Opening Night
+About Us
+Advertise
+Media Kit
+Careers
+Legal
+Terms of Use
+Privacy Policy
+California Privacy
+Rights
+Privacy Preferences
+AdChoices
+Your Privacy Choices
+Accessibility
+Magazine
+Customer Service
+Back Issues
+Subscribe
+Help
+More
+Newsletters
+Archives
+Events
+Luminate
+Connect
+Instagram
+Twitter
+YouTube
+Facebook
+LinkedIn
+The Business of Entertainment
+SUBSCRIBE TODAY
+Variety is a part of Penske Media Corporation. © 2025 Variety Media, LLC. All Rights Reserved. Variety and the Flying V logos are trademarks of
+Variety Media, LLC. Powered by WordPress.com VIP
+Have a News Tip? Let us know
+Variety is a part of Penske Media Corporation. © 2025 Variety Media, LLC. All Rights Reserved. Variety and the
+Flying V logos are trademarks of Variety Media, LLC.
+Historical dramas — in particular those centered on
+fearless feats of resistance against authoritarian regimes
+— often seek to be warnings. The oft-quoted Winston
+Churchill line — “Those that fail to learn from history are
+doomed to repeat it” — may ring simply too facile. Yet in
+watching a lm like Jiří Mádl’s <span class="lx-highlight" data-idx="2" style="background-color:#C8E6C9;">handsomely mounted
+period drama</span> “Waves,” one cannot help but see in its
+story, and in the history it’s retelling, <span class="lx-highlight" data-idx="3" style="background-color:#C8E6C9;">an urgent plea
+about the pressing need for a free press</span>. But within its
+thriller-like trappings is also <span class="lx-highlight" data-idx="4" style="background-color:#C8E6C9;">a complicated meditation
+on how such a demand rests on the shoulders of men
+and women who are human, and therefore fallible</span>.
+ADVERTISEMENT
+Related Stories
+James Van Der Beek Says Weight Loss at
+&#x27;Dawson&#x27;s Creek&#x27; Reunion &#x27;Was Not Cancer
+Related,&#x27; Cries Over Family Getting a
+Standing Ovation From Fans
+“Waves” opens with <span class="lx-highlight" data-idx="5" style="background-color:#C8E6C9;">an unequivocal historical truth</span>:
+“The Soviet Union keeps Eastern European countries
+under its control,” a voice informs viewers as images of
+Joseph Stalin, the U.S.S.R. and the aforementioned
+countries and peoples (including those of targeted and
+executed political prisoners) ash on the screen. “Any
+sign of freedom is suppressed by force,” this short
+prologue states, setting the tone for the <span class="lx-highlight" data-idx="6" style="background-color:#C8E6C9;">rightfully
+paranoid atmosphere</span> that “Waves” soon plunges into.
+<span class="lx-highlight" data-idx="7" style="background-color:#C8E6C9;">Media censorship — and the fear it distills and depends
+on — is rampant.</span> The year is 1967 in Czechoslovakia and
+in that country there is no larger media organization
+than Czechoslovak Radio.
+Set in the run up to the Warsaw Pact invasion of
+Czechoslovakia, “Waves” is most fascinated with the way
+those working at the International News Ofce at
+Czechoslovak Radio <span class="lx-highlight" data-idx="8" style="background-color:#C8E6C9;">served as a last standing bulwark
+against the authoritarianism</span> that would eventually fully
+take over in 1968, when tanks and troops tamped down
+on any open dissidence to the Communist Party of
+Czechoslovakia. As a point of entry to that history, Mádl
+introduces the ctional character of Tomáš (Vojtěch
+Vodochodský). He’s an everyman who unwittingly nds
+himself working at the radio station and witnessing
+rsthand how journalist luminary Milan Weiner
+(Stanislav Majer) <span class="lx-highlight" data-idx="9" style="background-color:#C8E6C9;">righteously stands his ground against
+state-sanctioned censorship and intimidation</span>.
+ADVERTISEMENT
+Like many citizens who listen raptly to his every word,
+<span class="lx-highlight" data-idx="10" style="background-color:#D2E3FC;">Tomáš is awed by Weiner</span>. But unlike his younger brother
+Pavel (Ondřej Stupka), who goes out into the streets in
+protest and <span class="lx-highlight" data-idx="11" style="background-color:#C8E6C9;">sees in such activities a powerful sense of
+civic duty he must abide by</span> (and which <span class="lx-highlight" data-idx="12" style="background-color:#D2E3FC;">Weiner rightly
+represents</span>), <span class="lx-highlight" data-idx="13" style="background-color:#C8E6C9;">Tomáš is more skittish. More prudent. More
+pragmatic, perhaps.</span> He’s the kind of citizen who’s eager
+to put his head down and make sure he has food to put
+on the table as he cares for his brother. He doesn’t see
+himself having either the privilege nor the principles to
+personally involve himself in the resistance his new
+place of employment becomes a symbol for.
+No sooner has Tomáš begun working at the radio station
+than Weiner and his team begin to more forcefully push
+back against the news coming out of the Soviet Union
+and the Czechoslovakian government itself. Weiner soon
+makes clear he’s not about to be a mere cog in the
+propaganda machine his boss would have him be. His
+beliefs put him and his team in the crosshairs of a
+government and a military who are becoming
+increasingly hostile to those who do not toe the party
+line. When a recording of what really took place at a
+student protest arrives in their ofce, Weiner and his
+colleagues (not to mention Tomáš, who’s been recruited
+by State Security to inform on the radio’s activities) have
+to weigh how far they will go to shine a spotlight on the
+truth. And whether their own livelihood and sense of
+security is worth such a risk. 
+“Waves” unfolds like a ticking time bomb of a spy
+thriller. Filip Malásek’s <span class="lx-highlight" data-idx="14" style="background-color:#C8E6C9;">editing deserves praise for
+<span class="lx-highlight" data-idx="15" style="background-color:#D2E3FC;">keeping an edge-of-seat tempo</span></span>, even as <span class="lx-highlight" data-idx="16" style="background-color:#C8E6C9;">the</span> story plays
+out exactly as you know it will. Tested loyalties and cat-
+and-mouse chases set the stage for the brave work
+Czechoslovak Radio’s journalists accomplished in the
+year leading up to the invasion. The lm’s pulse-
+pounding rhythms (alternately scored by 1960s pop
+songs and Simon Goff’s stunning compositions) soon
+<span class="lx-highlight" data-idx="17" style="background-color:#D2E3FC;">make it feel like a gripping John Le Carré tale</span>. The
+freedom of the press is here no mere abstract concept;
+<span class="lx-highlight" data-idx="18" style="background-color:#C8E6C9;">it’s an embodied moral imperative</span> that rests on
+professionals who constantly had to make tough
+personal choices that could put them at odds with
+colleagues, friends and even family. 
+ADVERTISEMENT
+Anchoring this tale in the perspective of Tomáš, Mádl
+makes the moral clarity of the likes of Weiner — and
+even the more pragmatic approach of someone like Věra
+Šťovíčková (Tatiana Pauhofová), a key gure in the anti-
+occupation broadcast that serves as the climactic event
+in the lm — <span class="lx-highlight" data-idx="19" style="background-color:#C8E6C9;">feel all the more powerful</span>. This is no
+hagiographic portrait of Czechoslovak Radio as a beacon
+of civic resistance. It is <span class="lx-highlight" data-idx="20" style="background-color:#C8E6C9;">a grounded, humanist work</span> of
+how difcult it can be to make moral choices in the face
+of authoritarianism.
+Led by its <span class="lx-highlight" data-idx="21" style="background-color:#C8E6C9;">stellar ensemble</span>, “Waves” makes for <span class="lx-highlight" data-idx="22" style="background-color:#C8E6C9;">a</span> eet-
+footed period drama, the kind whose <span class="lx-highlight" data-idx="23" style="background-color:#C8E6C9;">straightforward
+narrative</span> is heightened by its <span class="lx-highlight" data-idx="24" style="background-color:#C8E6C9;">stylistic and narrative
+con</span>dence. Those familiar with the history of the 1968
+occupation may know how things will turn out. But Mádl
+isn’t solely interested in chronicling that pivotal year.
+He’s memorializing a historic moment that resonates in
+2024, precisely because its central themes have not, in
+the decades since, become historical ones. If anything
+they’ve become all the more urgent for it.
+Read More About: Best International Feature Film, Jiri Madl,
+Waves
+‘Waves’ Review: Jiří Mádl’s Drama on the End of the Prague
+Spring Marks a <span class="lx-highlight" data-idx="25" style="background-color:#C8E6C9;">Timely Portrait</span> of <span class="lx-highlight" data-idx="26" style="background-color:#C8E6C9;">the Power of Principled
+Journalists</span>
+Reviewed online, Oct. 25, 2024. In Karlovy Vary International Film
+Festival. Running time: 131 MINS.
+Production: (Czech Republic, Slovakia). A Dawson Films
+production, in co-production with Czech Radio and Czech
+Television and Wandal and Barrandov Studio. Producer: Monika
+Kristl, Wanda Adamík Hrycová. Creative producer: Jaroslav
+Sedláček.
+Crew: Director: Jiří Mádl. Writer: Jiří Mádl. Camera: Martin Žiaran.
+Editor: Filip Malásek. Music: Simon Goff.
+With: Vojtěch Vodochodský, Ondřej Stupka, Tatiana Pauhofová,
+Stanislav Majer, Vojtěch Kotek, Marika Šoposká, Petr Lněnička,
+Matyáš Řezníček, Petr Halíček, Martin Hofmann, Jacob Erftemeijer,
+Jan Nedbal, Tomáš Maštalír, Igor Bareš.
+Man Intervenes as Child
+Jumps on Seats – Watch
+the Outcome
+Happy in Shape | Sponsored
+Entitled Passenger Shouts
+at Service Dog – Look
+What Happens Next
+Tips and Tricks | Sponsored
+No One Talks About This
+Sleep Apnea Solution (But
+It Actually Works)
+Derila Ergo | Sponsored
+Pirates Approach a Cruise
+Ship – See How the
+Genius Captain Responds!
+Happy in Shape | Sponsored
+<span class="lx-highlight" data-idx="27" style="background-color:#C8E6C9;">Man Is Sick Of Neighbours
+Using His Pool, So He
+<span class="lx-highlight" data-idx="28" style="background-color:#D2E3FC;">Plans This Unexpected…</span></span>
+Tips and Tricks | Sponsored
+<span class="lx-highlight" data-idx="29" style="background-color:#C8E6C9;">A Simple Method Against
+Snoring and Sleep Apnea
+(It’s Genius!)</span>
+Sleep-Experts | Sponsored
+OUR SITES
+<span class="lx-highlight" data-idx="30" style="background-color:#C8E6C9;">Jelly Roll Receives Full
+Pardon in Tennessee for
+Past Crimes</span>
+<span class="lx-highlight" data-idx="31" style="background-color:#C8E6C9;">Chris Evans Returns for
+‘Avengers: Doomsday’ as
+Captain America With a
+Child, Teaser Confirms</span>
+<span class="lx-highlight" data-idx="32" style="background-color:#C8E6C9;">Leonardo DiCaprio Tells
+Jennifer Lawrence He’s
+Never Rewatched
+‘Titanic’ as They Discuss
+Going Deep in &#x27;One
+Battle After Another&#x27;
+and &#x27;Die My…</span>
+<span class="lx-highlight" data-idx="33" style="background-color:#C8E6C9;">Sony to Acquire Control
+of Peanuts in $457
+Million Deal</span>
+‘When Life Gives You
+Tangerines’ Star Kim
+S
+h
+‘S
+t H
+’
+Read Next: <span class="lx-highlight" data-idx="34" style="background-color:#C8E6C9;">7 Burning Questions About the Oscars’ Big Move to YouTube — From Mid-Speech Ads to a…</span>
+&quot;&quot;&quot;
+
+
+      </div>
+      <div class="lx-controls">
+        <div class="lx-button-row">
+          <button class="lx-control-btn" onclick="playPause()">▶️ Play</button>
+          <button class="lx-control-btn" onclick="prevExtraction()">⏮ Previous</button>
+          <button class="lx-control-btn" onclick="nextExtraction()">⏭ Next</button>
+        </div>
+        <div class="lx-progress-container">
+          <input type="range" id="progressSlider" class="lx-progress-slider"
+                 min="0" max="34" value="0"
+                 onchange="jumpToExtraction(this.value)">
+        </div>
+        <div class="lx-status-text">
+          Entity <span id="entityInfo">1/35</span> |
+          Pos <span id="posInfo">[284-305]</span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function() {
+        const extractions = [{"index": 0, "class": "opinion_statement", "text": "muscular spy thriller", "color": "#C8E6C9", "startPos": 284, "endPos": 305, "beforeText": ", 2024 4:00pm PT\n\u2018Waves\u2019 Review: Ji\u0159\u00ed M\u00e1dl\u2019s Drama on\nthe End of the Prague Spring Marks a\nTimely Portrait of the Power of\nPrincipled Journalists\nThe ", "extractionText": "muscular spy thriller", "afterText": ", which is the Czech entry for international feature\nat this year&#x27;s Oscars, shines a light on the brave work of the International\nNews Office at Czech", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The film</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">muscular spy thriller</span>}</div>"}, {"index": 1, "class": "opinion_statement", "text": "shines a light on the brave work", "color": "#C8E6C9", "startPos": 381, "endPos": 413, "beforeText": " Portrait of the Power of\nPrincipled Journalists\nThe muscular spy thriller, which is the Czech entry for international feature\nat this year&#x27;s Oscars, ", "extractionText": "shines a light on the brave work", "afterText": " of the International\nNews Office at Czechoslovak Radio leading up to the Warsaw Pact invasion\nof Czechoslovakia.\nBy Manuel Betancourt\nMore from Varie", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The film</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">shines a light on the brave work</span>}</div>"}, {"index": 2, "class": "opinion_statement", "text": "handsomely mounted period drama", "color": "#C8E6C9", "startPos": 3205, "endPos": 3236, "beforeText": "Churchill line \u2014 \u201cThose that fail to learn from history are\ndoomed to repeat it\u201d \u2014 may ring simply too facile. Yet in\nwatching a \u0089lm like Ji\u0159\u00ed M\u00e1dl\u2019s ", "extractionText": "handsomely mounted\nperiod drama", "afterText": " \u201cWaves,\u201d one cannot help but see in its\nstory, and in the history it\u2019s retelling, an urgent plea\nabout the pressing need for a free press. But within", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">the film</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">handsomely mounted</span>}</div>"}, {"index": 3, "class": "opinion_statement", "text": "an urgent plea about the pressing need for a free press", "color": "#C8E6C9", "startPos": 3319, "endPos": 3374, "beforeText": " in\nwatching a \u0089lm like Ji\u0159\u00ed M\u00e1dl\u2019s handsomely mounted\nperiod drama \u201cWaves,\u201d one cannot help but see in its\nstory, and in the history it\u2019s retelling, ", "extractionText": "an urgent plea\nabout the pressing need for a free press", "afterText": ". But within its\nthriller-like trappings is also a complicated meditation\non how such a demand rests on the shoulders of men\nand women who are human, ", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">its story, and in the history it\u2019s retelling</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">urgent plea</span>}</div>"}, {"index": 4, "class": "opinion_statement", "text": "a complicated meditation on how such a demand rests on the shoulders of men and women who are human, and therefore fallible", "color": "#C8E6C9", "startPos": 3423, "endPos": 3546, "beforeText": "its\nstory, and in the history it\u2019s retelling, an urgent plea\nabout the pressing need for a free press. But within its\nthriller-like trappings is also ", "extractionText": "a complicated meditation\non how such a demand rests on the shoulders of men\nand women who are human, and therefore fallible", "afterText": ".\nADVERTISEMENT\nRelated Stories\nJames Van Der Beek Says Weight Loss at\n&#x27;Dawson&#x27;s Creek&#x27; Reunion &#x27;Was Not Cancer\nRelated,&#x27; Cries Over Family Getting a\n", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">its thriller-like trappings</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Neutral</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">complicated meditation</span>}</div>"}, {"index": 5, "class": "opinion_statement", "text": "an unequivocal historical truth", "color": "#C8E6C9", "startPos": 3742, "endPos": 3773, "beforeText": "Beek Says Weight Loss at\n&#x27;Dawson&#x27;s Creek&#x27; Reunion &#x27;Was Not Cancer\nRelated,&#x27; Cries Over Family Getting a\nStanding Ovation From Fans\n\u201cWaves\u201d opens with ", "extractionText": "an unequivocal historical truth", "afterText": ":\n\u201cThe Soviet Union keeps Eastern European countries\nunder its control,\u201d a voice informs viewers as images of\nJoseph Stalin, the U.S.S.R. and the afor", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The opening of the film</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">unequivocal historical truth</span>}</div>"}, {"index": 6, "class": "opinion_statement", "text": "rightfully paranoid atmosphere", "color": "#C8E6C9", "startPos": 4138, "endPos": 4168, "beforeText": "\nexecuted political prisoners) \u008aash on the screen. \u201cAny\nsign of freedom is suppressed by force,\u201d this short\nprologue states, setting the tone for the ", "extractionText": "rightfully\nparanoid atmosphere", "afterText": " that \u201cWaves\u201d soon plunges into.\nMedia censorship \u2014 and the fear it distills and depends\non \u2014 is rampant. The year is 1967 in Czechoslovakia and\nin th", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The atmosphere</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">rightfully paranoid</span>}</div>"}, {"index": 7, "class": "opinion_statement", "text": "Media censorship \u2014 and the fear it distills and depends on \u2014 is rampant.", "color": "#C8E6C9", "startPos": 4201, "endPos": 4273, "beforeText": " freedom is suppressed by force,\u201d this short\nprologue states, setting the tone for the rightfully\nparanoid atmosphere that \u201cWaves\u201d soon plunges into.\n", "extractionText": "Media censorship \u2014 and the fear it distills and depends\non \u2014 is rampant.", "afterText": " The year is 1967 in Czechoslovakia and\nin that country there is no larger media organization\nthan Czechoslovak Radio.\nSet in the run up to the Warsaw", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">Media censorship</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Negative</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">is rampant</span>}</div>"}, {"index": 8, "class": "opinion_statement", "text": "served as a last standing bulwark against the authoritarianism", "color": "#C8E6C9", "startPos": 4565, "endPos": 4627, "beforeText": "e Warsaw Pact invasion of\nCzechoslovakia, \u201cWaves\u201d is most fascinated with the way\nthose working at the International News Of\u0089ce at\nCzechoslovak Radio ", "extractionText": "served as a last standing bulwark\nagainst the authoritarianism", "afterText": " that would eventually fully\ntake over in 1968, when tanks and troops tamped down\non any open dissidence to the Communist Party of\nCzechoslovakia. As ", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">Those working at the International News Office at Czechoslovak Radio</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">last standing bulwark</span>}</div>"}, {"index": 9, "class": "opinion_statement", "text": "righteously stands his ground against state-sanctioned censorship and intimidation", "color": "#C8E6C9", "startPos": 5036, "endPos": 5118, "beforeText": " an everyman who unwittingly \u0089nds\nhimself working at the radio station and witnessing\n\u0089rsthand how journalist luminary Milan Weiner\n(Stanislav Majer) ", "extractionText": "righteously stands his ground against\nstate-sanctioned censorship and intimidation", "afterText": ".\nADVERTISEMENT\nLike many citizens who listen raptly to his every word,\nTom\u00e1\u0161 is awed by Weiner. But unlike his younger brother\nPavel (Ond\u0159ej Stupka),", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">Milan Weiner</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">righteously stands his ground</span>}</div>"}, {"index": 10, "class": "audience_impact", "text": "Tom\u00e1\u0161 is awed by Weiner", "color": "#D2E3FC", "startPos": 5190, "endPos": 5213, "beforeText": "teously stands his ground against\nstate-sanctioned censorship and intimidation.\nADVERTISEMENT\nLike many citizens who listen raptly to his every word,\n", "extractionText": "Tom\u00e1\u0161 is awed by Weiner", "afterText": ". But unlike his younger brother\nPavel (Ond\u0159ej Stupka), who goes out into the streets in\nprotest and sees in such activities a powerful sense of\ncivic", "attributesHtml": "<div><strong>class:</strong> audience_impact</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">emotion_evoked</span>: <span class=\"lx-attr-value\">awed</span>, <span class=\"lx-attr-key\">causal_element</span>: <span class=\"lx-attr-value\">Milan Weiner</span>, <span class=\"lx-attr-key\">target_audience</span>: <span class=\"lx-attr-value\">Tom\u00e1\u0161</span>}</div>"}, {"index": 11, "class": "opinion_statement", "text": "sees in such activities a powerful sense of civic duty he must abide by", "color": "#C8E6C9", "startPos": 5314, "endPos": 5385, "beforeText": "raptly to his every word,\nTom\u00e1\u0161 is awed by Weiner. But unlike his younger brother\nPavel (Ond\u0159ej Stupka), who goes out into the streets in\nprotest and ", "extractionText": "sees in such activities a powerful sense of\ncivic duty he must abide by", "afterText": " (and which Weiner rightly\nrepresents), Tom\u00e1\u0161 is more skittish. More prudent. More\npragmatic, perhaps. He\u2019s the kind of citizen who\u2019s eager\nto put his", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">Pavel&#x27;s protest activities</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">powerful sense of civic duty</span>}</div>"}, {"index": 12, "class": "audience_impact", "text": "Weiner rightly represents", "color": "#D2E3FC", "startPos": 5397, "endPos": 5422, "beforeText": "avel (Ond\u0159ej Stupka), who goes out into the streets in\nprotest and sees in such activities a powerful sense of\ncivic duty he must abide by (and which ", "extractionText": "Weiner rightly\nrepresents", "afterText": "), Tom\u00e1\u0161 is more skittish. More prudent. More\npragmatic, perhaps. He\u2019s the kind of citizen who\u2019s eager\nto put his head down and make sure he has food ", "attributesHtml": "<div><strong>class:</strong> audience_impact</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">emotion_evoked</span>: <span class=\"lx-attr-value\">admiration</span>, <span class=\"lx-attr-key\">causal_element</span>: <span class=\"lx-attr-value\">Weiner&#x27;s actions</span>, <span class=\"lx-attr-key\">target_audience</span>: <span class=\"lx-attr-value\">Pavel</span>}</div>"}, {"index": 13, "class": "opinion_statement", "text": "Tom\u00e1\u0161 is more skittish. More prudent. More pragmatic, perhaps.", "color": "#C8E6C9", "startPos": 5425, "endPos": 5487, "beforeText": "es out into the streets in\nprotest and sees in such activities a powerful sense of\ncivic duty he must abide by (and which Weiner rightly\nrepresents), ", "extractionText": "Tom\u00e1\u0161 is more skittish. More prudent. More\npragmatic, perhaps.", "afterText": " He\u2019s the kind of citizen who\u2019s eager\nto put his head down and make sure he has food to put\non the table as he cares for his brother. He doesn\u2019t see\nh", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">Tom\u00e1\u0161&#x27;s personality</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Neutral</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">skittish. More prudent. More pragmatic</span>}</div>"}, {"index": 14, "class": "opinion_statement", "text": "editing deserves praise for keeping an edge-of-seat tempo", "color": "#C8E6C9", "startPos": 6702, "endPos": 6759, "beforeText": "whether their own livelihood and sense of\nsecurity is worth such a risk.\u00a0\n\u201cWaves\u201d unfolds like a ticking time bomb of a spy\nthriller. Filip Mal\u00e1sek\u2019s ", "extractionText": "editing deserves praise for\nkeeping an edge-of-seat tempo", "afterText": ", even as the story plays\nout exactly as you know it will. Tested loyalties and cat-\nand-mouse chases set the stage for the brave work\nCzechoslovak Ra", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">Filip Mal\u00e1sek\u2019s editing</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">keeping an edge-of-seat tempo</span>}</div>"}, {"index": 15, "class": "audience_impact", "text": "keeping an edge-of-seat tempo", "color": "#D2E3FC", "startPos": 6730, "endPos": 6759, "beforeText": " and sense of\nsecurity is worth such a risk.\u00a0\n\u201cWaves\u201d unfolds like a ticking time bomb of a spy\nthriller. Filip Mal\u00e1sek\u2019s editing deserves praise for\n", "extractionText": "keeping an edge-of-seat tempo", "afterText": ", even as the story plays\nout exactly as you know it will. Tested loyalties and cat-\nand-mouse chases set the stage for the brave work\nCzechoslovak Ra", "attributesHtml": "<div><strong>class:</strong> audience_impact</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">emotion_evoked</span>: <span class=\"lx-attr-value\">suspenseful, engaged</span>, <span class=\"lx-attr-key\">causal_element</span>: <span class=\"lx-attr-value\">Filip Mal\u00e1sek\u2019s editing</span>, <span class=\"lx-attr-key\">target_audience</span>: <span class=\"lx-attr-value\">the audience</span>}</div>"}, {"index": 16, "class": "opinion_statement", "text": "The \u2030lm\u2019s pulse-pounding rhythms (alternately scored by 1960s pop songs and Simon Goff\u2019s stunning compositions) soon make it feel like a gripping John Le Carr\u00e9 tale.", "color": "#C8E6C9", "startPos": 6769, "endPos": 6772, "beforeText": "risk.\u00a0\n\u201cWaves\u201d unfolds like a ticking time bomb of a spy\nthriller. Filip Mal\u00e1sek\u2019s editing deserves praise for\nkeeping an edge-of-seat tempo, even as ", "extractionText": "the", "afterText": " story plays\nout exactly as you know it will. Tested loyalties and cat-\nand-mouse chases set the stage for the brave work\nCzechoslovak Radio\u2019s journal", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The film&#x27;s rhythms and score</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">gripping John Le Carr\u00e9 tale</span>}</div>"}, {"index": 17, "class": "audience_impact", "text": "make it feel like a gripping John Le Carr\u00e9 tale", "color": "#D2E3FC", "startPos": 7098, "endPos": 7145, "beforeText": "ear leading up to the invasion. The \u0089lm\u2019s pulse-\npounding rhythms (alternately scored by 1960s pop\nsongs and Simon Goff\u2019s stunning compositions) soon\n", "extractionText": "make it feel like a gripping John Le Carr\u00e9 tale", "afterText": ". The\nfreedom of the press is here no mere abstract concept;\nit\u2019s an embodied moral imperative that rests on\nprofessionals who constantly had to make ", "attributesHtml": "<div><strong>class:</strong> audience_impact</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">emotion_evoked</span>: <span class=\"lx-attr-value\">thrilled, engaged</span>, <span class=\"lx-attr-key\">causal_element</span>: <span class=\"lx-attr-value\">The film&#x27;s pulse-pounding rhythms and score</span>, <span class=\"lx-attr-key\">target_audience</span>: <span class=\"lx-attr-value\">the audience</span>}</div>"}, {"index": 18, "class": "opinion_statement", "text": "it\u2019s an embodied moral imperative", "color": "#C8E6C9", "startPos": 7206, "endPos": 7239, "beforeText": " Simon Goff\u2019s stunning compositions) soon\nmake it feel like a gripping John Le Carr\u00e9 tale. The\nfreedom of the press is here no mere abstract concept;\n", "extractionText": "it\u2019s an embodied moral imperative", "afterText": " that rests on\nprofessionals who constantly had to make tough\npersonal choices that could put them at odds with\ncolleagues, friends and even family.\u00a0\n", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The freedom of the press</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">embodied moral imperative</span>}</div>"}, {"index": 19, "class": "opinion_statement", "text": "feel all the more powerful", "color": "#C8E6C9", "startPos": 7690, "endPos": 7716, "beforeText": "ch of someone like V\u011bra\n\u0160\u0165ov\u00ed\u010dkov\u00e1 (Tatiana Pauhofov\u00e1), a key \u0089gure in the anti-\noccupation broadcast that serves as the climactic event\nin the \u0089lm \u2014 ", "extractionText": "feel all the more powerful", "afterText": ". This is no\nhagiographic portrait of Czechoslovak Radio as a beacon\nof civic resistance. It is a grounded, humanist work of\nhow dif\u0089cult it can be to", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The moral clarity of Weiner and V\u011bra \u0160\u0165ov\u00ed\u010dkov\u00e1</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">all the more powerful</span>}</div>"}, {"index": 20, "class": "opinion_statement", "text": "a grounded, humanist work", "color": "#C8E6C9", "startPos": 7812, "endPos": 7837, "beforeText": "limactic event\nin the \u0089lm \u2014 feel all the more powerful. This is no\nhagiographic portrait of Czechoslovak Radio as a beacon\nof civic resistance. It is ", "extractionText": "a grounded, humanist work", "afterText": " of\nhow dif\u0089cult it can be to make moral choices in the face\nof authoritarianism.\nLed by its stellar ensemble, \u201cWaves\u201d makes for a \u008aeet-\nfooted period", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The film</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">grounded, humanist</span>}</div>"}, {"index": 21, "class": "opinion_statement", "text": "stellar ensemble", "color": "#C8E6C9", "startPos": 7930, "endPos": 7946, "beforeText": "acon\nof civic resistance. It is a grounded, humanist work of\nhow dif\u0089cult it can be to make moral choices in the face\nof authoritarianism.\nLed by its ", "extractionText": "stellar ensemble", "afterText": ", \u201cWaves\u201d makes for a \u008aeet-\nfooted period drama, the kind whose straightforward\nnarrative is heightened by its stylistic and narrative\ncon\u0089dence. Thos", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The ensemble</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">stellar</span>}</div>"}, {"index": 22, "class": "opinion_statement", "text": "a \u0160eet-footed period drama", "color": "#C8E6C9", "startPos": 7966, "endPos": 7967, "beforeText": "ounded, humanist work of\nhow dif\u0089cult it can be to make moral choices in the face\nof authoritarianism.\nLed by its stellar ensemble, \u201cWaves\u201d makes for ", "extractionText": "a", "afterText": " \u008aeet-\nfooted period drama, the kind whose straightforward\nnarrative is heightened by its stylistic and narrative\ncon\u0089dence. Those familiar with the h", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The film</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">\u0160eet-footed period drama</span>}</div>"}, {"index": 23, "class": "opinion_statement", "text": "straightforward narrative", "color": "#C8E6C9", "startPos": 8010, "endPos": 8035, "beforeText": " be to make moral choices in the face\nof authoritarianism.\nLed by its stellar ensemble, \u201cWaves\u201d makes for a \u008aeet-\nfooted period drama, the kind whose ", "extractionText": "straightforward\nnarrative", "afterText": " is heightened by its stylistic and narrative\ncon\u0089dence. Those familiar with the history of the 1968\noccupation may know how things will turn out. But", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The narrative</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">straightforward</span>}</div>"}, {"index": 24, "class": "opinion_statement", "text": "stylistic and narrative con\u2030dence", "color": "#C8E6C9", "startPos": 8057, "endPos": 8084, "beforeText": "itarianism.\nLed by its stellar ensemble, \u201cWaves\u201d makes for a \u008aeet-\nfooted period drama, the kind whose straightforward\nnarrative is heightened by its ", "extractionText": "stylistic and narrative\ncon", "afterText": "\u0089dence. Those familiar with the history of the 1968\noccupation may know how things will turn out. But M\u00e1dl\nisn\u2019t solely interested in chronicling that", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The film</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">stylistic and narrative con\u2030dence</span>}</div>"}, {"index": 25, "class": "opinion_statement", "text": "timely portrait", "color": "#C8E6C9", "startPos": 8599, "endPos": 8614, "beforeText": " for it.\nRead More About: Best International Feature Film, Jiri Madl,\nWaves\n\u2018Waves\u2019 Review: Ji\u0159\u00ed M\u00e1dl\u2019s Drama on the End of the Prague\nSpring Marks a ", "extractionText": "Timely Portrait", "afterText": " of the Power of Principled\nJournalists\nReviewed online, Oct. 25, 2024. In Karlovy Vary International Film\nFestival. Running time: 131 MINS.\nProductio", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The film</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">timely</span>}</div>"}, {"index": 26, "class": "opinion_statement", "text": "the Power of Principled Journalists", "color": "#C8E6C9", "startPos": 8618, "endPos": 8653, "beforeText": "About: Best International Feature Film, Jiri Madl,\nWaves\n\u2018Waves\u2019 Review: Ji\u0159\u00ed M\u00e1dl\u2019s Drama on the End of the Prague\nSpring Marks a Timely Portrait of ", "extractionText": "the Power of Principled\nJournalists", "afterText": "\nReviewed online, Oct. 25, 2024. In Karlovy Vary International Film\nFestival. Running time: 131 MINS.\nProduction: (Czech Republic, Slovakia). A Dawson", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The film</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">Power of Principled Journalists</span>}</div>"}, {"index": 27, "class": "opinion_statement", "text": "Man Is Sick Of Neighbours Using His Pool, So He Plans This Unexpected\u2026", "color": "#C8E6C9", "startPos": 9706, "endPos": 9776, "beforeText": "tion (But\nIt Actually Works)\nDerila Ergo | Sponsored\nPirates Approach a Cruise\nShip \u2013 See How the\nGenius Captain Responds!\nHappy in Shape | Sponsored\n", "extractionText": "Man Is Sick Of Neighbours\nUsing His Pool, So He\nPlans This Unexpected\u2026", "afterText": "\nTips and Tricks | Sponsored\nA Simple Method Against\nSnoring and Sleep Apnea\n(It\u2019s Genius!)\nSleep-Experts | Sponsored\nOUR SITES\nJelly Roll Receives Fu", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">Man</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Negative</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">Sick Of Neighbours Using His Pool</span>}</div>"}, {"index": 28, "class": "audience_impact", "text": "Plans This Unexpected\u2026", "color": "#D2E3FC", "startPos": 9754, "endPos": 9776, "beforeText": "ored\nPirates Approach a Cruise\nShip \u2013 See How the\nGenius Captain Responds!\nHappy in Shape | Sponsored\nMan Is Sick Of Neighbours\nUsing His Pool, So He\n", "extractionText": "Plans This Unexpected\u2026", "afterText": "\nTips and Tricks | Sponsored\nA Simple Method Against\nSnoring and Sleep Apnea\n(It\u2019s Genius!)\nSleep-Experts | Sponsored\nOUR SITES\nJelly Roll Receives Fu", "attributesHtml": "<div><strong>class:</strong> audience_impact</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">emotion_evoked</span>: <span class=\"lx-attr-value\">curiosity, anticipation</span>, <span class=\"lx-attr-key\">causal_element</span>: <span class=\"lx-attr-value\">The man&#x27;s plan</span>, <span class=\"lx-attr-key\">target_audience</span>: <span class=\"lx-attr-value\">the audience</span>}</div>"}, {"index": 29, "class": "opinion_statement", "text": "A Simple Method Against Snoring and Sleep Apnea (It\u2019s Genius!)", "color": "#C8E6C9", "startPos": 9805, "endPos": 9867, "beforeText": "enius Captain Responds!\nHappy in Shape | Sponsored\nMan Is Sick Of Neighbours\nUsing His Pool, So He\nPlans This Unexpected\u2026\nTips and Tricks | Sponsored\n", "extractionText": "A Simple Method Against\nSnoring and Sleep Apnea\n(It\u2019s Genius!)", "afterText": "\nSleep-Experts | Sponsored\nOUR SITES\nJelly Roll Receives Full\nPardon in Tennessee for\nPast Crimes\nChris Evans Returns for\n\u2018Avengers: Doomsday\u2019 as\nCapt", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">A Simple Method Against Snoring and Sleep Apnea</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">It\u2019s Genius!</span>}</div>"}, {"index": 30, "class": "opinion_statement", "text": "Jelly Roll Receives Full Pardon in Tennessee for Past Crimes", "color": "#C8E6C9", "startPos": 9904, "endPos": 9964, "beforeText": "Plans This Unexpected\u2026\nTips and Tricks | Sponsored\nA Simple Method Against\nSnoring and Sleep Apnea\n(It\u2019s Genius!)\nSleep-Experts | Sponsored\nOUR SITES\n", "extractionText": "Jelly Roll Receives Full\nPardon in Tennessee for\nPast Crimes", "afterText": "\nChris Evans Returns for\n\u2018Avengers: Doomsday\u2019 as\nCaptain America With a\nChild, Teaser Confirms\nLeonardo DiCaprio Tells\nJennifer Lawrence He\u2019s\nNever Re", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">Jelly Roll</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">Receives Full Pardon</span>}</div>"}, {"index": 31, "class": "opinion_statement", "text": "Chris Evans Returns for \u2018Avengers: Doomsday\u2019 as Captain America With a Child, Teaser Confirms", "color": "#C8E6C9", "startPos": 9965, "endPos": 10058, "beforeText": "ethod Against\nSnoring and Sleep Apnea\n(It\u2019s Genius!)\nSleep-Experts | Sponsored\nOUR SITES\nJelly Roll Receives Full\nPardon in Tennessee for\nPast Crimes\n", "extractionText": "Chris Evans Returns for\n\u2018Avengers: Doomsday\u2019 as\nCaptain America With a\nChild, Teaser Confirms", "afterText": "\nLeonardo DiCaprio Tells\nJennifer Lawrence He\u2019s\nNever Rewatched\n\u2018Titanic\u2019 as They Discuss\nGoing Deep in &#x27;One\nBattle After Another&#x27;\nand &#x27;Die My\u2026\nSony t", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">Chris Evans</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">Returns for \u2018Avengers: Doomsday\u2019 as Captain America With a Child</span>}</div>"}, {"index": 32, "class": "opinion_statement", "text": "Leonardo DiCaprio Tells Jennifer Lawrence He\u2019s Never Rewatched \u2018Titanic\u2019 as They Discuss Going Deep in 'One Battle After Another' and 'Die My\u2026", "color": "#C8E6C9", "startPos": 10059, "endPos": 10201, "beforeText": " Roll Receives Full\nPardon in Tennessee for\nPast Crimes\nChris Evans Returns for\n\u2018Avengers: Doomsday\u2019 as\nCaptain America With a\nChild, Teaser Confirms\n", "extractionText": "Leonardo DiCaprio Tells\nJennifer Lawrence He\u2019s\nNever Rewatched\n\u2018Titanic\u2019 as They Discuss\nGoing Deep in &#x27;One\nBattle After Another&#x27;\nand &#x27;Die My\u2026", "afterText": "\nSony to Acquire Control\nof Peanuts in $457\nMillion Deal\n\u2018When Life Gives You\nTangerines\u2019 Star Kim\nS\nh\n\u2018S\nt H\n\u2019\nRead Next: 7 Burning Questions About t", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">Leonardo DiCaprio</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Neutral</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">Never Rewatched \u2018Titanic\u2019</span>}</div>"}, {"index": 33, "class": "opinion_statement", "text": "Sony to Acquire Control of Peanuts in $457 Million Deal", "color": "#C8E6C9", "startPos": 10202, "endPos": 10257, "beforeText": "nfirms\nLeonardo DiCaprio Tells\nJennifer Lawrence He\u2019s\nNever Rewatched\n\u2018Titanic\u2019 as They Discuss\nGoing Deep in &#x27;One\nBattle After Another&#x27;\nand &#x27;Die My\u2026\n", "extractionText": "Sony to Acquire Control\nof Peanuts in $457\nMillion Deal", "afterText": "\n\u2018When Life Gives You\nTangerines\u2019 Star Kim\nS\nh\n\u2018S\nt H\n\u2019\nRead Next: 7 Burning Questions About the Oscars\u2019 Big Move to YouTube \u2014 From Mid-Speech Ads to ", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">Sony</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">Acquire Control of Peanuts in $457 Million Deal</span>}</div>"}, {"index": 34, "class": "opinion_statement", "text": "7 Burning Questions About the Oscars\u2019 Big Move to YouTube \u2014 From Mid-Speech Ads to a\u2026", "color": "#C8E6C9", "startPos": 10324, "endPos": 10409, "beforeText": "After Another&#x27;\nand &#x27;Die My\u2026\nSony to Acquire Control\nof Peanuts in $457\nMillion Deal\n\u2018When Life Gives You\nTangerines\u2019 Star Kim\nS\nh\n\u2018S\nt H\n\u2019\nRead Next: ", "extractionText": "7 Burning Questions About the Oscars\u2019 Big Move to YouTube \u2014 From Mid-Speech Ads to a\u2026", "afterText": "\n&quot;&quot;&quot;\n\n", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">7 Burning Questions About the Oscars\u2019 Big Move to YouTube</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Neutral</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">Burning Questions</span>}</div>"}];
+        let currentIndex = 0;
+        let isPlaying = false;
+        let animationInterval = null;
+        let animationSpeed = 1.0;
+
+        function updateDisplay() {
+          const extraction = extractions[currentIndex];
+          if (!extraction) return;
+
+          document.getElementById('attributesContainer').innerHTML = extraction.attributesHtml;
+          document.getElementById('entityInfo').textContent = (currentIndex + 1) + '/' + extractions.length;
+          document.getElementById('posInfo').textContent = '[' + extraction.startPos + '-' + extraction.endPos + ']';
+          document.getElementById('progressSlider').value = currentIndex;
+
+          const playBtn = document.querySelector('.lx-control-btn');
+          if (playBtn) playBtn.textContent = isPlaying ? '⏸ Pause' : '▶️ Play';
+
+          const prevHighlight = document.querySelector('.lx-text-window .lx-current-highlight');
+          if (prevHighlight) prevHighlight.classList.remove('lx-current-highlight');
+          const currentSpan = document.querySelector('.lx-text-window span[data-idx="' + currentIndex + '"]');
+          if (currentSpan) {
+            currentSpan.classList.add('lx-current-highlight');
+            currentSpan.scrollIntoView({block: 'center', behavior: 'smooth'});
+          }
+        }
+
+        function nextExtraction() {
+          currentIndex = (currentIndex + 1) % extractions.length;
+          updateDisplay();
+        }
+
+        function prevExtraction() {
+          currentIndex = (currentIndex - 1 + extractions.length) % extractions.length;
+          updateDisplay();
+        }
+
+        function jumpToExtraction(index) {
+          currentIndex = parseInt(index);
+          updateDisplay();
+        }
+
+        function playPause() {
+          if (isPlaying) {
+            clearInterval(animationInterval);
+            isPlaying = false;
+          } else {
+            animationInterval = setInterval(nextExtraction, animationSpeed * 1000);
+            isPlaying = true;
+          }
+          updateDisplay();
+        }
+
+        window.playPause = playPause;
+        window.nextExtraction = nextExtraction;
+        window.prevExtraction = prevExtraction;
+        window.jumpToExtraction = jumpToExtraction;
+
+        updateDisplay();
+      })();
+    </script>
